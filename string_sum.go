@@ -31,14 +31,14 @@ func StringSum(input string) (output string, err error) {
 	input = strings.ReplaceAll(input, " ", "")
 
 	if len(input) == 0 {
-		return "", fmt.Errorf("An Error Occured. %w", errorEmptyInput)
+		return "", fmt.Errorf("an Error Occured. %w", errorEmptyInput)
 	}
 
 	reg := regexp.MustCompile(`[-+]?\d+[^-+]`)
 	operands := reg.FindAllString(input, -1)
 
 	if len(operands) != 2 {
-		return "", fmt.Errorf("An Error Occured. %w", errorNotTwoOperands)
+		return "", fmt.Errorf("an Error Occured. %w", errorNotTwoOperands)
 	}
 	a, err := strconv.Atoi(strings.TrimSpace(operands[0]))
 	b, err := strconv.Atoi(strings.TrimSpace(operands[1]))
